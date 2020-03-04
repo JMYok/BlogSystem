@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragment :: head(~{::title})">
+    <title>博客管理主页</title>
+</head>
+<body>
+<!--导航-->
+<nav th:replace="admin/_fragment :: menu(0)">
+    <div class="container">
+        <div class="ui inverted secondary stackable menu">
+            <h1 class="ui teal header item">管理后台</h1>
+            <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==1}? 'active'"><i class="mini home icon"></i>博客</a>
+            <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==2}? 'active'"><i class="mini idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==3}? 'active'"><i class="mini tags icon"></i>标签</a>
+            <div class="right m-item m-mobile-hide menu">
+                <div class="ui dropdown item">
+                    <div class="text">
+                        <img src="../../static/images/touxiang2.jpg" th:src="@{/images/touxiang2.jpg}" alt="" class="ui avatar image">BobJiang
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" class="item">注销</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-top-right m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<!--中间内容-->
+<div class="  m-container-small m-padded-tb-large">
+    <div class="ui container">
+        <div class="ui success large message">
+            <h2>Hi,</h2>
+            <p>Bob,欢迎登录！</p>
+        </div>
+        <img src="https://unsplash.it/1000/600?image=1008" alt="" class="ui rounded bordered fluid image">
+    </div>
+</div>
+
+<!--底部-->
+<footer th:replace="admin/_fragment :: footer">
+</footer>
+
+<!--引入必要js-->
+<th:block th:replace="admin/_fragment :: script">
+</th:block>
+<script>
+    $(".menu.toggle").click(function(){
+        $(".m-item").toggleClass("m-mobile-hide");
+    });
+    $(".ui.dropdown").dropdown({
+        on: "hover"
+    });
+</script>
+</body>
+</html>

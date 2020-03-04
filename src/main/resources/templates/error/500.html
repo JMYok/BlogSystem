@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layouts/_fragment :: head(~{::title})">
+    <title>错误</title>
+</head>
+<body>
+<!--导航-->
+<nav th:replace="layouts/_fragment :: menu(0)">
+</nav>
+<div class="m-container-small">
+    <div class="error message">
+        <div class="ui container">
+            <h2>500</h2>
+            <p>对不起，你访问的页面不存在哦</p>
+        </div>
+    </div>
+</div>
+<!--底部-->
+<footer th:replace="layouts/_fragment :: footer">
+</footer>
+
+</body>
+</html>
